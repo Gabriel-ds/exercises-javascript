@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de média JS</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    button {
+        bottom: 20px;
+        padding: 30px;
+        border-radius: 50px;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Média do aluno v1.0</h1>
+    </header>
+    <button onclick="calcular()">Calcular média</button>
+    <section id="res">
+        <p>O resultado vai aparecer aqui</p>
+    </section>
+</body>
+<script>
+    function calcular() {
+        var nome = window.prompt('Qual é o nome do aluno?')
+        var n1 = Number(window.prompt(`Qual foi a primeira nota de ${nome}?`))
+        var n2 = Number(window.prompt(`Além de ${n1}, qual foi a outra nota de ${nome}?`))
+        var media = (n1+n2)/2
+
+        let res = document.querySelector('#res')
+        res.innerHTML = `<p>Calculando a média final de <strong>${nome}</strong>.`
+        res.innerHTML += `<p>As notas foram <strong>${n1}</strong> e <strong>${n2}</strong>.</p>`
+        res.innerHTML += `<p>A média final é <mark><strong>${media}</strong></mark></p>`
+        if(media>=6){
+            res.innerHTML += `<p>Situação: <strong><mark>APROVADO!</mark></strong>`
+        } else {
+            res.innerHTML += `<p>Situação: <strong><mark>REPROVADO!</mark></strong>`
+        }
+    }
+</script>
+</html>

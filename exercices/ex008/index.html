@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contas com JS</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button {
+            padding: 20px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vários cálculos em JS</h1>
+    <button onclick="calcular()">Clique para calcular</button>
+    <section id="resultado">
+        <p>O resultado vai aparecer aqui...</p>
+    </section>
+</body>
+<script>
+    function calcular() {
+        var n = Number(window.prompt('Digite um número:'))
+        var inteiro = Math.trunc(n)
+        var raizquadrada = Math.sqrt(n)
+        var raizcubica = Math.cbrt(n)
+        var quad = n**2
+        var cub = n**3
+        var res = document.querySelector('#resultado')
+        res.innerHTML = `<p>O número a ser analisado aqui será o <strong>${n}</strong><hr></p>`
+        res.innerHTML += `<p>O seu valor absoluto é ${n}</p>`
+        res.innerHTML += `<p>A sua parte inteira é ${inteiro}</p>`
+        res.innerHTML += `<p>O valor inteiro mais próximo é ${Math.round(n)}</p>`
+        res.innerHTML += `<p>O valor de ${n} ao quadrado é ${quad}</p>`
+        res.innerHTML += `<p>O valo de ${n} ao cubo é ${cub}<p/>`
+    }
+</script>
+</html>
