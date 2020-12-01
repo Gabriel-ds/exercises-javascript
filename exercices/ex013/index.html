@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher number</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        button{
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Higher Value</h1>
+    <button onclick="start()">Click to start</button>
+    <section id="res">
+        <p>The result will appear here</p>
+    </section>
+</body>
+<script>
+    function start() {
+        let n1 = Number(prompt('Enter a number: '))
+        let n2 = Number(prompt('Enter another number: '))
+        let res = document.querySelector('#res')
+
+        if(n1>n2) {
+            res.innerHTML = `<p>Analyzing values ${n1} and ${n2}, value ${n1} is greater</p>`
+        } else if(n1<n2) {
+            res.innerHTML = `<p>Analyzing values ${n1} and ${n2}, value ${n2} is greater</p>`
+        } else {
+            res.innerHTML = `<p>Analyzing values ${n1} and ${n2}, both are <MARK>EQUAL</MARK></p>`
+        }
+    }
+</script>
+</html>

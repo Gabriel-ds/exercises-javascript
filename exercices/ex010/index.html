@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript externo</title>
+    <style>
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        h1 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        button {
+            padding: 25px;
+        }
+        #bt-limpar {
+            margin: 20px 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript externo</h1>
+    <button onclick="bt1()">Ação 1</button>
+    <button onclick="bt2()">Ação 2</button>
+    <button onclick="bt3()">Ação 3</button>
+    <button onclick="bt4()">Ação 4</button>
+    <br>
+    <button id="bt-limpar" onclick="limpar()">LIMPAR</button>
+   
+    
+</body>
+<section id="res">
+    <p>Aqui vou registrar suas ações com os botões acima.</p>
+</section>
+<script src="script.js"></script>
+</html>

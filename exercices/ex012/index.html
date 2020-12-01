@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even or odd</title>
+    <style>
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        button {
+            padding: 30px;
+            font-size: 13pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>Is even or odd?</h1>
+    <button onclick="start()">Click to start</button>
+    <section id="res">
+        <p>The result will appear here...</p>
+    </section>
+</body>
+<script>
+    function start() {
+       let n = Number(prompt('Write a number: ')) 
+       let msg
+       if(n % 2 == 0) {
+            msg = 'Even!'
+       } else {
+           msg = 'Dod!'
+       }
+       let res = document.querySelector('#res')
+       res.innerHTML = `<p>The number ${n} whrite is <mark>${msg}</mark></p>`       
+    }
+</script>
+</html>
