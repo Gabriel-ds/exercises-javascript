@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing game</title>
+</head>
+<body>
+    <h1>Try to guess my number</h1>
+    <button onclick="start()">Try to guess</button>
+    <section id="res">
+        <p>I thought of a number between 1 and 100...</p>
+    </section>
+</body>
+<script>
+let n = Math.floor(Math.random() * 100)
+    function start(){
+        let res = document.querySelector('#res')
+        let fnumber = Number(prompt('What is your guess?'))
+
+        if (fnumber > n) {
+                res.innerHTML += `<p>You said ${fnumber}. My number is <strong>LESS</strong></p>`
+            } else if (fnumber < n) {
+                res.innerHTML += `<p>You said ${fnumber}. My number is <strong>BIGGER</strong></p>`
+            } else {
+                res.innerHTML += `<p>Congratulations!! You're right!!</p>`
+            }
+        
+        
+
+    }
+</script>
+</html>

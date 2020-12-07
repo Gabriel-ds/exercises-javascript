@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and time</title>
+</head>
+<style>
+    body{
+        font-family: 'Arial Narrow Bold', sans-serif;
+    }
+    button {
+        padding: 20px;
+    }
+</style>
+<body>
+    <h1>Analyzing system date and time</h1>
+    <button onclick="start()">Start Analysis</button>
+    <section id="res">
+        <p>Here somenthing will appear...</p>
+    </section>
+</body>
+<script>
+    function start(){
+        let now = new Date
+        let day = now.getDay()
+        let month = now.getMonth() 
+        let year = now.getFullYear()
+        let week = now.getUTCDay()
+        let hour = now.getHours()
+        let min = now.getMinutes()
+        let sec = now.getSeconds()
+
+        let res = document.querySelector('#res') 
+
+        res.innerHTML =
+        `<p>Day: <mark>${day}<mark></p>
+        <p>Month: <mark>${year}<mark></p>
+        <p>Day of the week: <mark>${week}<mark></p>
+        <p>Hours: <mark>${hour}</mark></p>
+        <p>Minutes: <mark>${min}</mark></p>
+        <p>Seconds: <mark>${min}</mark></p>
+        `
+    }
+</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers Draw</title>
+</head>
+<body>
+    <h1>Numbers Draw</h1>
+    <button onclick="draw()">Click me</button>
+    <button onclick="del()">Clear</button>
+    
+    <section id="res">
+        <p>Every time you press the button I think of a number between 0 and 100... </p>
+    </section>
+</body>
+<script>
+    function draw() {
+        let n = Math.floor(Math.random()* 100)
+        let res = document.querySelector('#res')
+        res.innerHTML += `<p>I thought about number <mark>${n}</mark></p>`
+    }
+    function del() {
+        let res = document.querySelector('#res')
+        res.innerHTML = ''
+    }
+</script>
+</html>

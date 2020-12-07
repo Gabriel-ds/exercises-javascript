@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculating age</title>
+</head>
+<style>
+    body{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    button{
+        padding: 20px;
+    }
+</style>
+<body>
+    <h1>Calculating age</h1>
+    <button onclick="calculate()">Calculate</button>
+    <section id="res">
+        <p>Here will the respost...</p>
+    </section>
+</body>
+<script>
+    let now = new Date
+    let here = now.getFullYear()
+    function calculate(){
+        let year = Number(prompt('Type a year'))
+        let calc = year - here
+
+        let res = document.querySelector('#res')
+
+        res.innerHTML = `<p>Quem nasceu em ${year} vai cpmpletar <strong>${calc}</strong> em ${here}`
+    }
+</script>
+</html>
