@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple actions</title>
+    <style>
+        button {
+            padding: 2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Multple actions</h1>
+    <button onclick="start()">Click to start</button>
+    <section id="res">
+        <p>Click to button above to start!</p>
+    </section>
+</body>
+<script>
+    function start() {
+        const n1 = Number(prompt('First value:'))
+        const n2 = Number(prompt('Second value:'))
+        const select = Number(prompt(
+            `Informed values: ${n1} and ${n2}
+            What do we do?
+            [1] sum
+            [2] subtract
+            [3] multiply
+            [4] share`))
+        
+        let res = document.querySelector('#res')
+        res.innerHTML = '<h2>Calculando...</h2>'
+
+        switch (select) {
+            case 1: 
+                res.innerHTML += `<p>${n1} + ${n2} = <strong>${n1+n2}</strong></p>`
+                break
+            case 2:
+                res.innerHTML += `<p>${n1} - ${n2} = <strong>${n1-n2}</strong></p>`
+                break
+            case 3:
+                res.innerHTML += `<p>${n1} x ${n2} = <strong>${n1*n2}</strong></p>` 
+                break
+            case 4: 
+                res.innerHTML += `<p>${n1} / ${n2} = <strong>${n1/n2}</strong></p>`
+                break
+            default:
+                res.innerHTML += `<p><strong>[ERROR]</strong> ENTER A VALID VALUE </p>`
+        }
+    }
+</script>
+</html>
