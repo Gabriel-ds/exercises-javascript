@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seasons of the Brazilt</title>
+</head>
+<style>
+    body {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    button {
+        padding: 20px;
+    }
+</style>
+<body>
+    <h1>Discover the season</h1>
+    <button onclick="verify()">Enter the month here</button>
+    <section id="res">
+        <p>Click the button to inform the month...</p>
+    </section>
+</body>
+<script>
+    function verify(){
+        const month = prompt('Enter the month in full')
+        let res = document.querySelector('#res')
+        
+        switch (month){
+            case 'janeiro': case 'february': case 'march':
+                res.innerHTML = `<p>In the month of ${month} the season is Summer</p>`
+                break
+            case 'april': case 'may': case 'june':
+                res.innerHTML = `<p>In the month of ${month} the season is Autumn</p>`
+                break
+            case 'july': case 'august': case 'setember': 
+                res.innerHTML = `<p>In the month of ${month} the season is Winter</p>`
+                break
+            case 'october': case 'november': case 'december':
+                res.innerHTML = `<p>In the month of ${month} the season is Spring</p>`
+                break
+        }
+    }
+</script>
+</html>

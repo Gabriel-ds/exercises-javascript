@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conting from 1 to 10</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conting from 1 to 10</h1>
+    <button onclick="cont()">Cont</button>
+    <section id="res">
+        <p>Click the button above to start</p>
+    </section>
+</body>
+<script>
+    function cont() {
+        const res = document.querySelector('#res')
+        res.innerHTML += `<h2>Conting from 1 to 10</h2>`
+        for (i = 1; i < 11; i++) {
+            res.innerHTML += `${i} 👉`
+        }
+        res.innerHTML += `🏁`
+    }
+</script>
+</html>

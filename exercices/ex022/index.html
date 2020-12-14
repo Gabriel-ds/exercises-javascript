@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conting from 1 to 10</title>
+    <style>
+        body {
+            font-family: cursive;
+        }
+        button {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conting from 1 to 10 (<mark><strong>marking pairs</mark></strong>)</h1>
+    <button onclick="cont()">Cont</button>
+    <section id="res">
+       <p>Click the button above to start...</p> 
+    </section>
+    
+</body>
+<script>
+    function cont(){
+        const res = document.querySelector('#res')
+        res.innerHTML += `<h2>Conting...</h2>`
+        for(i = 1; i < 11; i++){
+            if (i % 2 == 0){
+                res.innerHTML += `<mark>${i}</mark> 👉`
+            } else {
+                res.innerHTML += `${i} 👉`
+            }
+        }
+        res.innerHTML += `🏁`
+    }
+</script>
+</html>

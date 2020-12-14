@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form data</title>
+    <style>
+        *{font-family: Verdana, Geneva, Tahoma, sans-serif;}
+        button{
+            background-color: chocolate;
+            color: white;
+        }
+        button:hover {
+            background-color: black;
+            color: white;
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conting from 0 to any positive number</h1>
+    <p>Choose the final limit for counting from 0 (enter only positive numbers)</p>
+
+    <div>
+        <label>Final value:</label>
+        <input id="form" type="number" placeholder="Enter the number...">
+        <button onclick="start()">Cont</button>
+    </div>
+    <section id="res">
+        <p>Fill in the data above and press the button</p>
+    </section>
+</body>
+<script>
+    function start() {
+        const n = Number(document.querySelector('#form').value)
+        const res = document.querySelector('#res')
+
+        res.innerHTML += `<h3>Conting from 0 to ${n}</h3>`
+
+        for(i = 0; i <= n; i++){
+            res.innerHTML += `${i} 👉`
+        }
+        res.innerHTML += `🏁`
+    } 
+</script>
+</html>

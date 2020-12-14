@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regressive from 10 to 1</title>
+</head>
+<style>
+    body {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    button {
+        padding: 20px;
+    }
+</style>
+<body>
+    <h1>Regressive from 10 to 1 </h1>
+    <button onclick="start()">START</button>
+    <section id="res">
+        <p>Click the button above to start...</p>
+    </section>
+</body>
+<script>
+    function start() {
+        const res = document.querySelector('#res')
+        res.innerHTML += '<h2>Conting...</h2>'
+        for(i = 10; i > 0; i--){
+            res.innerHTML += `${i} 👉`
+        }
+        res.innerHTML += `🏁`
+    }
+</script>
+</html>

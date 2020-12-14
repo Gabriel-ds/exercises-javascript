@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart count</title>
+    <style>
+        *{font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
+        .f-group{
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Smart count</h1>
+    <hr>
+    <p>Use any value in the boxes, simulate counthing up and down. Also use negative values</p>
+    <form action="#" method="get">
+        <p>
+            <label for="">First value:</label>
+            <input type="number" id="numero1">
+        </p>
+
+        <p>
+            <label for="">Final value:</label>
+            <input type="number" id="numero2">
+        </p>
+
+        <input type="submit" value="Count" formaction="javascript:start()">
+    </form>
+    <hr>
+    <section id="res">
+        <p>Fill the data above and click the button</p>
+    </section>
+</body>
+<script>
+    function start(){
+        const res = document.querySelector('#res')
+        const n1 = Number(document.querySelector('#numero1').value)
+        const n2 = Number(document.querySelector('#numero2').value)
+
+        res.innerHTML += `<h2>Conting from ${n1} to ${n2}</h2>`
+
+       if(n1 < n2){
+            for(i = n1; i <= n2; i++) {
+                res.innerHTML += `${i} 👉`
+            } 
+            res.innerHTML += `🏁`
+        } else if (n1 > n2){
+            for(i = n1; i >= n2; i--) {
+                res.innerHTML += `${i} 👉`
+            }
+            res.innerHTML += `🏁`    
+        }  else {
+            res.innerHTML += `It is not possible to count because the numbers are the same`
+        }
+
+    }
+</script>
+</html>
