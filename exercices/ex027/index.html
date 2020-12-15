@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication table</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        h1, h2 {
+            font-family: 'Lobster', cursive;
+        }
+        body{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Super multiplication table</h1>
+    <p>Write a number in the box below and I will show you the multiplication table</p>
+    <form action="#">
+        <label for="">Number:</label>
+        <input type="number" placeholder="Choose a number" id="n">
+        <input type="submit" value="Multiplication Table" formaction="javascript:start()">
+        <section id="res">
+            <p>Fill the data above and press the button</p>
+        </section>
+    </form>
+</body>
+<script>
+    function start() {
+        const n = Number(document.querySelector('#n').value)
+        const res = document.querySelector('#res')
+        
+        res.innerHTML = `<h2>Multiplication table ${n}</h2>`
+
+        for(i = 1; i <= 10; i++) {
+            let m = n * i
+            res.innerHTML += `${n} x ${i} = ${m}<br>`
+        }
+
+    }
+</script>
+</html>

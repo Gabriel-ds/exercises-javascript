@@ -36,7 +36,7 @@
 <script>
     function start(){
         const res = document.querySelector('#res')
-        const n1 = Number(document.querySelector('#numero1').value)
+        const n1 = Number(document.querySelector('#numero1').value) 
         const n2 = Number(document.querySelector('#numero2').value)
 
         res.innerHTML += `<h2>Conting from ${n1} to ${n2}</h2>`
@@ -48,7 +48,7 @@
             res.innerHTML += `🏁`
         } else if (n1 > n2){
             for(i = n1; i >= n2; i--) {
-                res.innerHTML += `${i} 👉`
+                res.innerHTML += `${i} 👉` 
             }
             res.innerHTML += `🏁`    
         }  else {
