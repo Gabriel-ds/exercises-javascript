@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+    <style>
+        #n {
+            width: 120px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fatorial calculation</h1>
+    <p>Write a number (between 1 and 21) in the box below and I will show you his Factorial</p>
+    <form action="#">
+        <label for="">Number:</label>
+        <input type="number" name="factorial" id="n" max="21" min="1" placeholder="Enter a number">
+        <input type="submit" value="Factorial" formaction="javascript:start()">
+    </form>
+    <section id="res">
+        <p>Fill in the above and press the button</p>
+    </section>
+</body>
+<script>
+    function start() {
+        const n = Number(document.querySelector('#n').value)
+        const res = document.querySelector('#res')
+
+       res.innerHTML += `<h2>Calculating ${n}!</h2>`
+       
+       let f = 1
+       for(i = n; i > 1; i --){
+           res.innerHTML += `${i} x `
+           f = f * i            
+       }
+       res.innerHTML += `1 = <strong>${f}</strong>`
+    }
+</script>
+</html>
