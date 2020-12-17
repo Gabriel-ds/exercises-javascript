@@ -4,9 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temperature converter</title>
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Langar&display=swap" rel="stylesheet">
+    <style>
+        *{font-family: 'Langar', cursive;}
+        button {
+            padding: 20px;
+            font-size: 12pt;
+        }
+    </style>
 </head>
 <body>
     <h1>Temperature Converter</h1>
+    <button onclick="start()">Convert</button>
+    <section id="res">
+        <p>Click the button above to start</p>
+    </section>
 </body>
+<script>
+    function start() {
+        const res = document.querySelector('#res')
+        const tc = Number(prompt('Enter a temperature in celsius (°C)'))
+
+        const tf = (tc * (9/5)) + 32
+        const tk = tc + 273.15
+        
+        res.innerHTML = `<h3>Converting ${tc}° celsius...</h3>`
+        res.innerHTML += `<p>${tf}° Fahrenheit</p>`
+        res.innerHTML += `<p>${tk}° Kelvin</p>`
+    }
+</script>
 </html>
