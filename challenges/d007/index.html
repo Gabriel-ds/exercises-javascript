@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency converter</title>
+    <style>
+        *{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        button {
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Convert R$ &rarr; US$</h1>
+    <button onclick="start()">Convert</button>
+    <section id="res">
+        <p>Click the button above to start</p>
+    </section>
+</body>
+<script>
+    const dolar = Number(prompt('How much is the dollar quote now?'))
+    function start() {
+        const res = document.querySelector('#res')
+        const real = Number(prompt('How much R$ do you have in your wallet?'))
+
+        res.innerHTML = `<h3>Converting R$${real}...</h3>`
+        res.innerHTML += `<p>You have a US$${real/dolar}`
+    }
+</script>
+</html>
