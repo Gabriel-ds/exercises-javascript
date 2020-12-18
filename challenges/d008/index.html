@@ -15,6 +15,16 @@
 </body>
 <script>
     function start() {
+        const prod = prompt('What product are you buying?')
+        const price = Number(prompt('How much does this product cost?'))
+        const res = document.querySelector('#res')
+
+        const disc = (price/100) * 10
+
+        res.innerHTML = `<h2>Calculating 10% discont for ${prod}...</h2>`
+        res.innerHTML += `<p>The original price was US$${price}`
+        res.innerHTML += `<p>You just won US$${disc} discount (-10%)`
+        res.innerHTML += `<p>In the end you will pay $US${price-disc} on the ${prod}.`
         
     }
 </script>
