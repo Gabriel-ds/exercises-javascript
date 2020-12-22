@@ -19,9 +19,17 @@
 </body>
 <script>
     function start() {
-        const name = prompt('What is the employee name?')
+        const name = prompt('What is the employee name?') 
         const sal = Number(prompt(`What is ${name} salary?`))
-        const res = 
+        const perc = Number(prompt(`How much will ${name} salary be adjusted by how many percent (%)?`))
+        const res = document.querySelector('#res')
+
+        const readjust = (sal/100) * perc
+        
+        res.innerHTML = `<h2>${name} received a salary increase!`
+        res.innerHTML += `<p>The salary was US${sal}</p>` 
+        res.innerHTML += `<p>With the ${perc} increase, the salary will increase by US$${readjust} next month`   
+        res.innerHTML += `<p>And from there, ${name} will start earning US$${sal+readjust}</p>`
     }
 </script>
 </html>
