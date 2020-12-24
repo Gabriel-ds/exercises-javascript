@@ -21,7 +21,10 @@
 
         const calc = Math.pow(b, 2) - 4 * a * c
 
-        res.innerHTML = `<h2></h2>`
+        res.innerHTML = `<h2>Solving Bhaskara...</h2>`
+        res.innerHTML += `<p>The current equation is: <strong>${a}x<sup>2</sup> + ${b}x + ${c} = 0</p>`
+        res.innerHTML += `<p>The calculation perfomed will be: <strong>Δ = ${b}<sup>2</sup> - 4 . ${a} . ${c}</strong></p>`
+        res.innerHTML += `<p>The calculed value is: <strong><mark>Δ = ${calc}</mark></strong></p>`
     }
 </script>
 </html>
