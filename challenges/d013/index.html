@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: rgb(151, 151, 151);
+            font-family: Arial;
+        }
+        button{
+            padding: 20px;        
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação Aluno</h1>
+    <button onclick="start()">Entrar com as notas</button>
+    <section id="res">
+        <p>Clique no botão acima para informar as notas do aluno</p>
+    </section>
+    <script>
+        function start(){
+            const nome = prompt('Qual é o nome do aluno?')
+            const n1 = Number(prompt(`Primeira nota de ${nome}:`))
+            const n2 = Number(prompt(`Segunda nota de ${nome}:`))
+            const res = document.querySelector('#res')
+            const media = (n1 + n1) / 2 
+            
+
+            res.innerHTML = `<h2>Analisando a situação de ${nome}</h2>`
+            res.innerHTML += `<p>Com as notas ${n1} e ${n2} a <strong>média é ${media}`
+
+            if (media < 3){ 
+                res.innerHTML += `<p>Com média abaixo de 3 o aluno está <strong><span style='background-color: red'>REPROVADO</span></strong></p>`
+            } else if (media >= 3 && media <= 6){
+                res.innerHTML += `<p>Com a média entre 3,0 e 6,0 o aluno está em <strong><span style="color: green">RECUPERAÇÃO</span></strong></p>`
+            } else {
+                res.innerHTML += `<p>Com a média acima de 6,0 o aluno está <strong><span style="background-color: green">APROVADO</span></strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>

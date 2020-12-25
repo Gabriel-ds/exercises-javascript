@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço mudou</title>
+    <style>
+        *{
+            background-color: rgb(148, 148, 148);
+        }
+    </style> 
+</head>
+<body>
+    <h1>Preço mudou</h1>
+    <button onclick="start()">Verificar</button>
+    <section id="res">
+        <p>Clique no botão acima para analisar o preço</p>
+    </section>
+</body>
+<script>
+    function start(){
+        const v1 = Number(prompt('Qual era o preço anterior do produto?'))
+        const v2 = Number(prompt('Qual é o preço atual do produto?'))
+        const res = document.querySelector('#res')
+
+        res.innerHTML = `<h3>Analisando os valores informados...</h3>`
+        res.innerHTML += `O produto custava R$${v1} e agora custa R$${v2}`
+
+        if(v1 > v2) {
+            res.innerHTML += `<p>Hoje o preço está mais barato` 
+            res.innerHTML += `<p>O preço do produto abaixou R$${v1-v2} em relação ao preço anterior`
+            const porc = (v2*100) / v1
+            res.innerHTML += `<p>${porc}</p>`
+        } else if (v1 < v2) {
+            res.innerHTML += `<p>Hoje o preço está mais caro`
+            res.innerHTML += `<p>O preço do produto aumentou R$${v2-v1} em relação ao preço anterior`
+            const porc = (v2*100) / v1
+            res.innerHTML += `<p>${porc}</p>`
+        } else {
+            res.innerHTML += `<p><strong>Não existe diferença de preço entre os valores informados</strong></p>`
+        }
+    }
+</script>
+</html>
